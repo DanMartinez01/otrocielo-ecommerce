@@ -1,0 +1,25 @@
+.product{
+    display: flex;
+    width:100%;
+    align-items: center;
+    justify-content:space-around;
+    padding:10px;
+}
+
+.productPhoto{
+    height:400px;
+    width:300px;
+}
+.productName, .productPrice{
+    text-align: center;
+    margin:0 5px;
+}
+.card{
+    background-color:whitesmoke;
+    border-radius: 10px;
+    
+}
+.greeting{
+    color:gray;
+    text-align: center;
+}
