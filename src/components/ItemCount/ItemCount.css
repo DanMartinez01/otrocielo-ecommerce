@@ -1,0 +1,22 @@
+.count{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding:3px;
+    margin:3px;
+}
+.button{
+    border-radius: 20px;
+    border-style: none;
+    outline: none;
+}
+.quantity{
+    padding:3px;
+    margin:0 3px;
+}
+p{
+    display: block;
+    text-align: center;
+    padding:3px;
+    margin:3px; 
+}

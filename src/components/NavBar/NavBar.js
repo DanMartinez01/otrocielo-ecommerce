@@ -7,7 +7,7 @@ export const NavBar = (props) => {
     const handleLogo = () => alert('Welcome!')
     const USER = {
         name: "Dani",
-        avatar: <MdPerson></MdPerson>
+        avatar: <MdPerson fontSize="small" color="black"></MdPerson>
     }
     return (
         <head className="head">
@@ -25,12 +25,12 @@ export const NavBar = (props) => {
 
 
                 <span className="cart">
-                    <a> <CartWidget /></a>
+                    <a className="cart-icon"><CartWidget /></a>
                     <p>{props.cartQuantity}</p>
                 </span>
                 <span className="user">
-                    <a>  <MdPerson /> </a>
-                    <p>{props.user}</p>
+                    <a className="user-icon"><MdPerson /></a>
+                    {/* <p>{props.user}</p> */}
                 </span>
             </div>
 

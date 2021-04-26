@@ -1,25 +1,43 @@
 .product{
     display: flex;
-    width:100%;
+    width: calc (100% - 20px);
     align-items: center;
-    justify-content:space-around;
     padding:10px;
+    margin:auto;
+    align-items: center;
+}
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    
+}
+@media (min-width:600px){
+    .wrapper{
+        flex-direction: row;
+        align-items: center;
+    }
 }
 
 .productPhoto{
     height:400px;
     width:300px;
+    border-radius: 10px;
 }
 .productName, .productPrice{
-    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: smaller;
+    text-align: left;
     margin:0 5px;
 }
-.card{
-    background-color:whitesmoke;
-    border-radius: 10px;
+/* .card{
     
-}
+    
+} */
 .greeting{
+    font-family: Arial, Helvetica, sans-serif;
     color:gray;
     text-align: center;
+}
+.welcome{
+    font-family: Helvetica,Arial,sans-serif;
 }

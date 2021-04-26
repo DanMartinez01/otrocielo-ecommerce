@@ -4,7 +4,7 @@ import { MdAddShoppingCart } from 'react-icons/md';
 export const CartWidget = () => {
     return (
         <div>
-            <button>
+            <button className="cart-icon" >
                 <MdAddShoppingCart fontSize="small" color="black" />
             </button>
         </div>
