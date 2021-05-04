@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Item from '../Item/Item';
 import './ItemCount.css';
 
 export const ItemCount = (props) => {
@@ -17,14 +18,18 @@ export const ItemCount = (props) => {
         if ((quantity <= stock) && (quantity > 1))
             setQuantity(quantity - 1)
     }
+    const onAdd = () => {
+        alert('Agregaste ' + quantity + ' item(s) al carrito')
+    }
     return (
         <div>
+            <div><p>Stock: {stock}</p> </div>
             <div className="count">
                 <button className="button" onClick={rest}>-</button>
                 <span className="quantity">{quantity} </span>
                 <button className="button" onClick={add}>+</button>
             </div>
-            <p>Stock: {stock}</p>
+            <button className="buttonAddCart" onClick={onAdd}>Agregar al carrito:</button>
         </div>
     )
 }

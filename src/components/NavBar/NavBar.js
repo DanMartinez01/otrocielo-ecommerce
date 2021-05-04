@@ -15,27 +15,21 @@ export const NavBar = (props) => {
             <nav className="navbar">
                 <ul className="links">
                     <li className="link"><a href="">Home</a></li>
-                    <li className="link"><a href="">Productos</a></li>
+                    <li className="link"><a href="">Categorias</a></li>
                     <li className="link"><a href="">Sale!</a></li>
                     <li className="link"><a href="">Contacto</a></li>
                 </ul>
             </nav >
             <div className="right">
                 <input type="search" className="search" placeholder="Search"></input>
-
-
                 <span className="cart">
                     <a className="cart-icon"><CartWidget /></a>
                     <p>{props.cartQuantity}</p>
                 </span>
                 <span className="user">
                     <a className="user-icon"><MdPerson /></a>
-                    {/* <p>{props.user}</p> */}
                 </span>
             </div>
-
-
-
         </head >
     )
 }

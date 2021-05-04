@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import '../ItemListContainer/ItemListContainer.css'
+import './Item.css';
 import { ItemCount } from '../ItemCount/ItemCount';
 import { ItemList } from '../ItemList/ItemList';
+import { Link } from 'react-router-dom';
+
 
 export const Item = () => {
     const [accesorios, setAccesorios] = useState([])
@@ -15,12 +17,12 @@ export const Item = () => {
     }
     useEffect(() => {
         getAccesorios(ItemList).then(result => {
-            console.log(result)
             setAccesorios(result)
         })
     }, [])
 
     return (
+
         <div className="wrapper">
             {accesorios.map((acc) =>
                 <div className="product">
@@ -30,11 +32,13 @@ export const Item = () => {
                             <p className="productName">SPRING COLLECTION</p>
                             <p className="productName"> {acc.name} </p>
                             <p className="productPrice"><b>$ {acc.price} </b></p>
-                            <ItemCount></ItemCount>
+                            <button className="buttonBuy"><Link to={`/ItemDetailContainer/${acc.id}`}>Comprar</Link></button>
+                            {/* <ItemCount></ItemCount> */}
                         </div>
                     </div>
                 </div>
             )}
+
         </div>
     )
 }

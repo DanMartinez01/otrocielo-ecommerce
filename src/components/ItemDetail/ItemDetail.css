@@ -1,22 +1,28 @@
 .product{
     display: flex;
     width: calc (100% - 20px);
-    align-items: center;
-    padding:10px;
-    margin:auto;
-    align-items: center;
+    padding:0 2px;
+    margin: auto;
 }
 .wrapper{
     display:flex;
     flex-direction: column;
+    margin:auto;
     
 }
-@media (min-width:800px){
+@media (min-width:600px){
     .wrapper{
         flex-direction: row;
         align-items: center;
     }
 }
+/* .wrapperDetails{
+    display: flex;
+    width: calc (100% - 20px);
+    padding:0 2px;
+    margin: auto;
+
+} */
 
 .productPhoto{
     height:400px;
