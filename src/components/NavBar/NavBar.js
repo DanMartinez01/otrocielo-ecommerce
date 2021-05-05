@@ -1,23 +1,28 @@
+import React from 'react';
 import './NavBar.css';
 import '../ItemListContainer/ItemListContainer';
-import { CartWidget } from '../CartWidget/CartWidget'
-import { MdPerson } from 'react-icons/md'
+import { CartWidget } from '../CartWidget/CartWidget';
+import { MdPerson } from 'react-icons/md';
+import { Logo } from '../Logo/Logo'
+import { Link } from 'react-router-dom';
+
+
 
 export const NavBar = (props) => {
-    const handleLogo = () => alert('Welcome!')
     const USER = {
         name: "Dani",
         avatar: <MdPerson fontSize="small" color="black"></MdPerson>
     }
+
     return (
+
         <head className="head">
-            <h3 className="logo" onClick={handleLogo}>OtroCielo Store</h3>
+            <Link to='/'> <Logo /> </Link>
             <nav className="navbar">
                 <ul className="links">
-                    <li className="link"><a href="">Home</a></li>
-                    <li className="link"><a href="">Categorias</a></li>
-                    <li className="link"><a href="">Sale!</a></li>
-                    <li className="link"><a href="">Contacto</a></li>
+                    <li className="link"><Link to='/category/Sunglasses'>Sunglasses</Link></li>
+                    <li className="link"><Link to='/category/Earrings'>Earrings</Link></li>
+                    <li className="link"><Link to='/category/Sale!'>Sale!</Link></li>
                 </ul>
             </nav >
             <div className="right">
@@ -30,6 +35,7 @@ export const NavBar = (props) => {
                     <a className="user-icon"><MdPerson /></a>
                 </span>
             </div>
+
         </head >
     )
 }

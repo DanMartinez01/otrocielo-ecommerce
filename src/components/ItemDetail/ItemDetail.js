@@ -17,9 +17,6 @@ export const ItemDetail = (props) => {
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
 
         </div>

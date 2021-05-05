@@ -1,0 +1,27 @@
+.banner{
+    width: calc (100% - 20px);
+    height: 50%;
+    border: 3px gray;
+    margin:auto;
+    background-color: gray;
+    padding: 50px;
+    margin-bottom: 20px; 
+    background-size: 100%;
+    animation: banner 10s infinite;
+    text-align: center;
+    font-size: larger;
+}
+@keyFrames banner{
+    0%, 30%{
+        background-color:rgba(218, 203, 203, 0.89);
+    }
+    35%, 65%{
+        background-color: whitesmoke;
+    }
+   70%, 100%{
+        background-color:rgb(241, 226, 226);
+   }
+   
+}
+
+

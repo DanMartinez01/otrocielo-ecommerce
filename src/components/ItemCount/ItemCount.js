@@ -29,7 +29,7 @@ export const ItemCount = (props) => {
                 <span className="quantity">{quantity} </span>
                 <button className="button" onClick={add}>+</button>
             </div>
-            <button className="buttonAddCart" onClick={onAdd}>Agregar al carrito:</button>
+            <button className="buttonAddCart" onClick={onAdd}>Add to cart</button>
         </div>
     )
 }

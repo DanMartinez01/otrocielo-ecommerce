@@ -1,12 +1,23 @@
 import './ItemListContainer.css';
+import { NavBar } from '../NavBar/NavBar'
 import { Item } from '../Item/Item';
+import { Footer } from '../Footer/Footer';
+import { Carousel } from '../Carousel/Carousel';
 
 
 const ItemListContainer = (props) => {
     return (
         <div>
-            {/* <h3 className="greeting">{greeting}</h3> */}
-            <Item></Item>
+            <NavBar />
+            <Carousel />
+            <Item
+                key={props.id}
+                category={props.category}
+                photo={props.photo}
+                name={props.name}
+                price={props.price}
+            />
+            <Footer />
         </div>
     )
 }
