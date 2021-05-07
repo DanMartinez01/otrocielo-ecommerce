@@ -3,6 +3,7 @@ import './Item.css';
 import ItemList from '../../data/ItemList.json'
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom'
+import { ItemCount } from '../ItemCount/ItemCount';
 
 
 export const Item = () => {
@@ -31,6 +32,7 @@ export const Item = () => {
                             <p className="productName"> {item.name} </p>
                             <p className="productPrice"><b>$ {item.price} </b></p>
                             <button className="buttonBuy"><Link to={`/ItemDetailContainer/${item.id}`}>I want it</Link></button>
+                            {/* <ItemCount></ItemCount> */}
                         </div>
                     </div>
                 </div>

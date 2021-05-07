@@ -16,13 +16,7 @@
         align-items: center;
     }
 }
-/* .wrapperDetails{
-    display: flex;
-    width: calc (100% - 20px);
-    padding:0 2px;
-    margin: auto;
 
-} */
 
 .productPhoto{
     height:400px;
@@ -35,10 +29,7 @@
     text-align: left;
     margin:0 5px;
 }
-/* .card{
-    
-    
-} */
+
 .greeting{
     font-family: Arial, Helvetica, sans-serif;
     color:gray;
@@ -46,4 +37,13 @@
 }
 .welcome{
     font-family: Helvetica,Arial,sans-serif;
+}
+.buttonAddCart{
+    display: flex;
+    margin:auto;
+    padding:6px;
+    border-radius: 20px;
+    border-style: none;
+    outline: none;
+    font-weight: bold;
 }

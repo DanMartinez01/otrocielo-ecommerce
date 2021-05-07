@@ -22,7 +22,7 @@ export const NavBar = (props) => {
                 <ul className="links">
                     <li className="link"><Link to='/category/Sunglasses'>Sunglasses</Link></li>
                     <li className="link"><Link to='/category/Earrings'>Earrings</Link></li>
-                    <li className="link"><Link to='/category/Sale!'>Sale!</Link></li>
+                    <li className="link"><Link to='/category/Sale'>Sale!</Link></li>
                 </ul>
             </nav >
             <div className="right">
