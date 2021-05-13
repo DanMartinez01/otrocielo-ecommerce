@@ -9,7 +9,7 @@ import { ItemCount } from '../ItemCount/ItemCount';
 export const Item = () => {
     let { categoryId } = useParams()
     const [itemsFiltrados, setItems] = useState([])
-    console.log(itemsFiltrados)
+
 
     useEffect(() => {
         if (!categoryId) {
@@ -32,7 +32,6 @@ export const Item = () => {
                             <p className="productName"> {item.name} </p>
                             <p className="productPrice"><b>$ {item.price} </b></p>
                             <button className="buttonBuy"><Link to={`/ItemDetailContainer/${item.id}`}>I want it</Link></button>
-                            {/* <ItemCount></ItemCount> */}
                         </div>
                     </div>
                 </div>

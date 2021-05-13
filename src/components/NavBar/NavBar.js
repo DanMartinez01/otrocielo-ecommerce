@@ -5,10 +5,14 @@ import { CartWidget } from '../CartWidget/CartWidget';
 import { MdPerson } from 'react-icons/md';
 import { Logo } from '../Logo/Logo'
 import { Link } from 'react-router-dom';
+import { useContext } from 'react'
+import { CartContext } from '../../context/cartContext';
 
 
 
 export const NavBar = (props) => {
+    const { quantity } = useContext(CartContext)
+
     const USER = {
         name: "Dani",
         avatar: <MdPerson fontSize="small" color="black"></MdPerson>
@@ -29,7 +33,7 @@ export const NavBar = (props) => {
                 <input type="search" className="search" placeholder="Search"></input>
                 <span className="cart">
                     <a className="cart-icon"><CartWidget /></a>
-                    <p>{props.cartQuantity}</p>
+                    <p>{quantity}</p>
                 </span>
                 <span className="user">
                     <a className="user-icon"><MdPerson /></a>

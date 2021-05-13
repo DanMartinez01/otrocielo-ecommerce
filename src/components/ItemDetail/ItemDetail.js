@@ -1,29 +1,20 @@
 import '../ItemDetail/ItemDetail.css';
+import ItemList from '../../data/ItemList.json'
 import { ItemCount } from '../ItemCount/ItemCount';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-export const ItemDetail = (props) => {
-    const stock = [20]
-    const [quantity, setQuantity] = useState(1)
+import { CartContext } from '../../context/cartContext';
+
+export const ItemDetail = (props, onAdd) => {
+
     const [showButton, setShowButton] = useState(true)
+    const { addToCart } = useContext(CartContext)
+    const { add, rest, stock, number, quantity } = useContext(CartContext)
 
-    const add = () => {
-        if (quantity < stock) {
-            setQuantity(quantity + 1)
-        }
-        else {
-            //algun msj
-        }
-    }
-    const rest = () => {
-        if ((quantity <= stock) && (quantity > 1))
-            setQuantity(quantity - 1)
-    }
-
-    const confirmPurchase = () => {
+    onAdd = () => {
+        addToCart(props.item)
         setShowButton(false)
     }
-
     return (
         <div>
             <div className="wrapper">
@@ -37,23 +28,34 @@ export const ItemDetail = (props) => {
                             <div>
                                 {
                                     showButton ?
-                                        (<ItemCount
-                                            stock={stock}
-                                            quantity={quantity}
-                                            add={add}
-                                            rest={rest}
-                                            confirmPurchase={confirmPurchase}
-                                        />)
+                                        (
+                                            <ItemCount
+                                                stock={stock}
+                                                number={number}
+                                                add={add}
+                                                rest={rest}
+                                                onAdd={() => {
+                                                    addToCart(props.item)
+                                                    setShowButton(false)
+                                                }}
+
+                                            />
+                                        )
                                         :
-                                        (<button className="buttonAddCart" onClick={confirmPurchase}><Link to='/cart'>Confirm Purchase</Link> </button>)
+                                        (
+                                            <div>
+                                                <button className="buttonAddCart" onClick={onAdd}>
+                                                    <Link to='/CartView'>Go to cart</Link>
+                                                </button>
+                                            </div>
+                                        )
                                 }
                             </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        </div >
+                    </div >
+                </div >
+            </div >
+        </div >
     )
 }
 
