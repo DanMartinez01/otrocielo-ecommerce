@@ -11,7 +11,7 @@ import { CartContext } from '../../context/cartContext';
 
 
 export const NavBar = (props) => {
-    const { quantity } = useContext(CartContext)
+    const { cartNumber, suma, clearAll } = useContext(CartContext)
 
     const USER = {
         name: "Dani",
@@ -32,8 +32,8 @@ export const NavBar = (props) => {
             <div className="right">
                 <input type="search" className="search" placeholder="Search"></input>
                 <span className="cart">
-                    <a className="cart-icon"><CartWidget /></a>
-                    <p>{quantity}</p>
+                    <Link to="/CartView" className="cart-icon"><CartWidget /></Link>
+                    <p>{suma(cartNumber)}</p>
                 </span>
                 <span className="user">
                     <a className="user-icon"><MdPerson /></a>

@@ -5,16 +5,17 @@ import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/cartContext';
 
-export const ItemDetail = (props, onAdd) => {
+export const ItemDetail = (props) => {
 
     const [showButton, setShowButton] = useState(true)
-    const { addToCart } = useContext(CartContext)
-    const { add, rest, stock, number, quantity } = useContext(CartContext)
+    const { addToCart, add, rest, stock, number, sumNumbers } = useContext(CartContext)
 
-    onAdd = () => {
+    const onAdd = () => {
         addToCart(props.item)
         setShowButton(false)
+        sumNumbers(number)
     }
+
     return (
         <div>
             <div className="wrapper">
@@ -34,17 +35,14 @@ export const ItemDetail = (props, onAdd) => {
                                                 number={number}
                                                 add={add}
                                                 rest={rest}
-                                                onAdd={() => {
-                                                    addToCart(props.item)
-                                                    setShowButton(false)
-                                                }}
 
+                                                onAdd={() => { onAdd() }}
                                             />
                                         )
                                         :
                                         (
                                             <div>
-                                                <button className="buttonAddCart" onClick={onAdd}>
+                                                <button className="buttonAddCart">
                                                     <Link to='/CartView'>Go to cart</Link>
                                                 </button>
                                             </div>
