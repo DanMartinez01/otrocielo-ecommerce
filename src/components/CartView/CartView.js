@@ -9,6 +9,7 @@ export const CartView = (clear) => {
     clear = () => {
         clearAll(cart)
     }
+    console.log(cart)
 
 
     return (

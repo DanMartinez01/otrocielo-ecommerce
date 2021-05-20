@@ -14,13 +14,11 @@ const ItemListContainer = (props) => {
             <Carousel />
             <Item
                 key={props.id}
+                id={props.id}
                 category={props.category}
                 photo={props.photo}
                 name={props.name}
                 price={props.price}
-
-            //llamar a onAdd
-
             />
             <Footer />
         </div>
