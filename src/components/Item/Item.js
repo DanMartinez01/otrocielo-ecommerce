@@ -16,7 +16,6 @@ export const Item = () => {
     useEffect(() => {
         const db = getfirestore()
         const ItemCollection = db.collection('items')
-        console.log(ItemCollection)
         ItemCollection.get().then(
             (querysnapshot) => {
                 if (querysnapshot.size === 0) {
@@ -26,14 +25,10 @@ export const Item = () => {
                     id: doc.id,
                     ...doc.data()
                 }))
-                // setItem(data)
 
                 setCatExists(true)
                 const filteredItems = data.filter(
                     (product) => product.category === categoryId)
-                console.log(filteredItems)
-                console.log(categoryId)
-                console.log(data)
                 {
                     (categoryId) ?
                         (setItem(filteredItems))
@@ -41,13 +36,14 @@ export const Item = () => {
                         (setItem(data))
                 }
             })
+        console.log(categoryId)
 
     }, [categoryId])
 
     return (
         <div className="wrapper">
             {isEmpty ?
-                (<p>Empty</p>)
+                (<p>Loading...</p>)
                 :
                 (item.map((item) =>
                     <div className="product">

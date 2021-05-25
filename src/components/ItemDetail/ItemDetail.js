@@ -7,12 +7,14 @@ import { getfirestore } from '../../firebase/'
 
 export const ItemDetail = (props) => {
     const [showButton, setShowButton] = useState(true)
-    const { addToCart, add, rest, stock, number, sumNumbers } = useContext(CartContext)
+    const { addToCart, add, rest, stock, number, sumNumbers, suma, cartNumber
+    } = useContext(CartContext)
 
     const onAdd = () => {
-        addToCart(props.item)
+        addToCart(item)
         setShowButton(false)
         sumNumbers(number)
+        suma(cartNumber)
     }
     let { id } = useParams()
     const [item, setItem] = useState([])
@@ -21,15 +23,13 @@ export const ItemDetail = (props) => {
         const db = getfirestore()
         const ItemCollection = db.collection('items')
         const product = ItemCollection.doc(id)
-        console.log(product)
-
         product.get().then(
             (querysnapshot) => {
                 const data = querysnapshot.data()
                 setItem(data)
+                console.log(id)
             })
     }, [])
-    console.log(item)
 
     return (
         <div>
@@ -49,6 +49,7 @@ export const ItemDetail = (props) => {
                                         add={add}
                                         rest={rest}
                                         onAdd={() => { onAdd() }}
+
                                     />)
                                     : (<div>
                                         <button className="buttonAddCart">

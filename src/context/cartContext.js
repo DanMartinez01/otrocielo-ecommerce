@@ -2,7 +2,6 @@ import { useState, createContext, useEffect } from 'react';
 import ItemCount from '../components/ItemCount/ItemCount';
 import { Item } from '../components/Item/Item'
 
-
 export const CartContext = createContext()
 export const CartProvider = ({ children }) => {
 
@@ -10,8 +9,8 @@ export const CartProvider = ({ children }) => {
     const [quantity, setQuantity] = useState(1)
     const [number, setNumber] = useState(1)
     const stock = 20
-    const [cartNumber, setCartNumber] = useState([0])
-    const [item, setItem] = useState([])
+    const [cartNumber, setCartNumber] = useState([])
+
 
     const add = () => {
         if (number < stock) {
@@ -23,36 +22,44 @@ export const CartProvider = ({ children }) => {
             setNumber(number - 1)
     }
 
-    const isInCart = (id) => {
-        return cart.find((item) => id === item.id)
+    const isInCart = item => cart.find(product => product.id === item.id)
 
-    }
-    console.log(cart)
-
-    const addToCart = (item) => {
-        if (isInCart(item.id)) {
+    const addToCart = (item, quantity) => {
+        if (isInCart(item)) {
             setNumber(item.quantity = number)
-        }
-        else {
-            item.quantity = number
             setCart([...cart, item])
         }
+        else {
+            item.quantity = quantity
+            setCart([...cart, { ...item }])
+            console.log(item.id)
+            console.log(cart)
+        }
+        setCart([...cart, { ...item }])
+        console.log(cart)
     }
+
 
     const sumNumbers = (number) => {
         setCartNumber([...cartNumber, number])
         console.log(cartNumber)
     }
+    const sumTotal = (cart) => {
+        const total = cart.reduce((t, product) =>
+            t += (product.price * product.quantity), 0
+        ).toFixed(2)
+        return total
+    }
 
     const removeFromCart = (id) => {
         const newCart = cart.filter((item) => item.id !== id)
         setCart(newCart)
+        console.log(id)
     }
 
     const suma = (cartNumber) => {
         return cartNumber.reduce((a, b) => a + b, 0)
     }
-    console.log(suma(cartNumber))
 
     useEffect(() => {
         setQuantity(cart.length)
@@ -67,7 +74,7 @@ export const CartProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, quantity, add, rest, number, clearAll, sumNumbers, cartNumber, suma }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, quantity, add, rest, number, clearAll, sumNumbers, cartNumber, suma, sumTotal }}>
             {children}
         </CartContext.Provider>
     )

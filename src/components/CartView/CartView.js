@@ -2,15 +2,13 @@ import { useState, useContext } from 'react'
 import { CartContext } from '../../context/cartContext';
 import { ItemDetailContainer } from '../ItemDetailContainer/ItemDetailContainer'
 import { Link } from 'react-router-dom';
-
+import { ItemCount } from '../ItemCount/ItemCount'
 export const CartView = (clear) => {
 
-    const { cart, removeFromCart, clearAll, cartNumber, suma, resta, quantity } = useContext(CartContext)
+    const { cart, removeFromCart, clearAll, cartNumber, suma, resta, quantity, sumTotal } = useContext(CartContext)
     clear = () => {
         clearAll(cart)
     }
-    console.log(cart)
-
 
     return (
         <div>
@@ -19,22 +17,23 @@ export const CartView = (clear) => {
             {cart.map((item) =>
                 <div className="productBox">
                     <h3>{item.name} </h3>
-                    <h4>{item.price} </h4>
+                    <h4>$ {item.price} </h4>
                     <h4>{item.quantity}</h4>
-                    {/* <h4>{suma(cartNumber)}</h4> */}
                     <button onClick={() => removeFromCart(item.id)}>Remove from cart</button>
                 </div>
             )
             }
+            <div>
+                <h3>Total Items: {suma(cartNumber)}</h3>
+                <h3>Total Price: $ {sumTotal(cart)} </h3>
+            </div>
             { cart.length === 0 ?
                 (
-                    // <button onClick={() => clear(cart.length)}>Clear all items</button>
                     <Link to="/"><button>Back to shopping</button></Link>
                 )
                 :
                 (
                     <button onClick={() => clear(cart.length)}>Clear all items</button>
-                    // <Link to="/"><button>Back to shopping</button></Link>
                 )
             }
         </div>

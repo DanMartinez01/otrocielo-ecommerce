@@ -11,6 +11,7 @@ export const ItemDetailContainer = (props) => {
             <NavBar />
             <ItemDetail
                 key={props.id}
+                id={props.id}
                 photo={props.photo}
                 name={props.name}
                 price={props.price}
