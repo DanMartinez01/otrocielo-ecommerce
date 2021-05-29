@@ -38,6 +38,7 @@ export const Item = () => {
             })
         console.log(categoryId)
 
+
     }, [categoryId])
 
     return (
