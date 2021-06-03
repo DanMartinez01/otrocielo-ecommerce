@@ -41,7 +41,26 @@ export const CartProvider = ({ children }) => {
         console.log("item qty", item.quantity)
         console.log("cartnumber", cartNumber)
     }
+    // const addToCart = (item, quantity) => {
 
+
+
+    //     const newCart = [...cart]
+
+    //     const findItem = isInCart(item);
+
+    //     if (findItem > 0) {
+    //         newCart[newCart.findIndex(prod => prod.id === item.id)].quantity += number
+    //         setCart(newCart);
+
+    //     }
+
+    //     item.quantity = quantity;
+    //     newCart.push(item);
+    //     setCart(newCart);
+    // }
+
+    // const isInCart = item => cart.find(product => product.id === item.id)
     const removeFromCart = (id) => {
         const newCart = cart.filter((itemId) => itemId[0].id !== id)
         setCart(newCart)
@@ -72,7 +91,7 @@ export const CartProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, quantity, add, rest, number, clearAll, cartNumber, suma, sumTotal }}>
+        <CartContext.Provider value={{ cart, setCart, addToCart, removeFromCart, quantity, add, rest, number, clearAll, cartNumber, suma, sumTotal }}>
             {children}
         </CartContext.Provider>
     )
