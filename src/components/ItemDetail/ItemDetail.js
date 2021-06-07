@@ -6,14 +6,13 @@ import { CartContext } from '../../context/cartContext';
 import { getfirestore } from '../../firebase/'
 import Item from '../Item/Item';
 
-export const ItemDetail = (props) => {
+export const ItemDetail = ({stock}) => {
     const [showButton, setShowButton] = useState(true)
-    const { addToCart, add, rest, stock, number, sumNumbers, suma, cartNumber } = useContext(CartContext)
+    const { addToCart, number, sumNumbers, suma, cartNumber,quantity } = useContext(CartContext)
 
     const onAdd = () => {
-        addToCart(item)
+        addToCart(item,quantity)
         setShowButton(false)
-        suma(cartNumber)
     }
     let { id } = useParams()
     const [item, setItem] = useState([])
@@ -42,16 +41,14 @@ export const ItemDetail = (props) => {
                                 <p className="productName">SPRING COLLECTION</p>
                                 <p className="productName">{item.name}</p>
                                 <p className="productPrice"><b>$ {item.price} </b></p>
+                                <p className="productPrice"><b> Stock: {item.stock} </b></p>
                             </div>
                         </div>
                     )}
                     <div className="wrapper">
                         {showButton ?
                             (<ItemCount
-                                stock={stock}
-                                number={number}
-                                add={add}
-                                rest={rest}
+                                // stock={item[0].stock}
                                 onAdd={() => { onAdd() }}
                             />)
                             :
@@ -59,7 +56,8 @@ export const ItemDetail = (props) => {
                                 <button className="buttonAddCart">
                                     <Link to='/CartView'>Go to cart</Link>
                                 </button>
-                            </div>)}
+                            </div>)
+                        }    
                     </div>
                 </div>
             </div >

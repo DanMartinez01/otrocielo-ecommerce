@@ -2,7 +2,7 @@ import firebase from 'firebase'
 import 'firebase/firestore'
 
 const app = firebase.initializeApp({
-    apiKey: "AIzaSyA9GXHK5CXAXVvQ7z7KZP_y-vGXiLggqlI",
+    apiKey: process.env.REACT_APP_API_KEY,
     authDomain: "otrocielo-ecommerce-3d328.firebaseapp.com",
     projectId: "otrocielo-ecommerce-3d328",
     storageBucket: "otrocielo-ecommerce-3d328.appspot.com",

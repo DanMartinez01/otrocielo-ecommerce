@@ -1,4 +1,5 @@
 import React from "react";
+import '../Input/Input.css'
 
 export const Input = ({ id, label, type, value, onChange }) => {
 

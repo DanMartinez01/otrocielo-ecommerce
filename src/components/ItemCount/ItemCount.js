@@ -2,7 +2,21 @@ import React, { useState } from 'react';
 import './ItemCount.css';
 
 
-export const ItemCount = ({ add, rest, stock, number, onAdd, quantity }) => {
+export const ItemCount = ({stock, quantity, onAdd}) => {
+
+ const [number, setNumber] = useState(1)
+//traer stock
+
+ const add = () => {
+        if (number < stock) {
+            setNumber(number + 1)
+        }
+        console.log('stock', stock)
+    }
+    const rest = () => {
+        if ((number <= stock) && (number > 1))
+            setNumber(number - 1)
+    }
 
     return (
         <div>

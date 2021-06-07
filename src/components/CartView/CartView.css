@@ -1,0 +1,38 @@
+
+.productBox{
+    height:200px;
+    width:200px;
+    border-radius: 10px; 
+    margin: auto; 
+}
+h4{
+    margin:1px;
+    padding:1px;
+    font-weight: normal;
+}
+.cartContainer{
+    text-align:center;
+    margin:1px;
+    padding:1px;
+} 
+
+@media (min-width:600px){
+    .cartContainer{
+        flex-direction: row;
+        text-align: center;
+    }
+}
+
+.finishPurchase{
+    display: flex;
+    margin:auto;
+    padding:6px;
+    border-radius: 20px;
+    border-style: none;
+    outline: none;
+    font-weight: bold;
+}
+.label{
+    margin:4px;
+    text-align:center;
+}
