@@ -21,9 +21,6 @@
     }
 }
 
-
-
-
   .logo{
     color:gray;
   }
@@ -77,17 +74,19 @@
   }
   .cart-icon{
     border-radius: 100px;
-    background-color: whitesmoke;
+    background-color: white;
     border-style: none;
     padding: 4px;
     outline:none;
-    
+   }
+   .cart-icon:hover{
+    background-color:whitesmoke;
    }
  
   .user{
     display: flex;
     align-items: center;
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
     border-radius: 100px;
     border-style: none;
     padding:5px;

@@ -1,9 +1,9 @@
+import React from 'react';
 import './ItemListContainer.css';
 import { NavBar } from '../NavBar/NavBar'
 import { Item } from '../Item/Item';
 import { Footer } from '../Footer/Footer';
 import { Carousel } from '../Carousel/Carousel';
-import React, { useState } from 'react';
 
 
 const ItemListContainer = (props) => {

@@ -1,32 +1,31 @@
 import React, { useState } from 'react';
 import './ItemCount.css';
+import { FaChevronLeft } from 'react-icons/fa';
+import { FaChevronRight } from 'react-icons/fa'
 
 
-export const ItemCount = ({stock, quantity, onAdd}) => {
+export const ItemCount = ({ stock, onAdd }) => {
 
- const [number, setNumber] = useState(1)
-//traer stock
+    const [number, setNumber] = useState(1)
 
- const add = () => {
+    const add = () => {
         if (number < stock) {
             setNumber(number + 1)
         }
-        console.log('stock', stock)
     }
-    const rest = () => {
+    const substract = () => {
         if ((number <= stock) && (number > 1))
             setNumber(number - 1)
     }
 
     return (
         <div>
-            <div><p>Stock: {stock}</p> </div>
             <div className="count">
-                <button className="button" onClick={rest}>-</button>
+                <button className="button" onClick={substract}><FaChevronLeft /> </button>
                 <span className="quantity">{number}</span>
-                <button className="button" onClick={add}>+</button>
+                <button className="button" onClick={add}><FaChevronRight /> </button>
             </div>
-            <button className="buttonAddCart" onClick={onAdd}>Add {quantity} to cart</button>
+            <button className="buttonAddCart" onClick={onAdd}>Add to cart</button>
         </div>
     )
 }

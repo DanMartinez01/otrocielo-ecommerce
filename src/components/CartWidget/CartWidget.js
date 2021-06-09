@@ -1,11 +1,11 @@
 import React from 'react';
-import { MdAddShoppingCart } from 'react-icons/md';
+import { BiCart } from 'react-icons/bi';
 
 export const CartWidget = () => {
     return (
         <div>
             <button className="cart-icon" >
-                <MdAddShoppingCart fontSize="small" color="black" />
+                <BiCart fontSize="large" color="black" />
             </button>
         </div>
     )

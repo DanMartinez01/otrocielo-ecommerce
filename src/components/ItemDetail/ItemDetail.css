@@ -38,12 +38,14 @@
 .welcome{
     font-family: Helvetica,Arial,sans-serif;
 }
-.buttonAddCart{
+.buttonGoCart{
     display: flex;
-    margin:auto;
-    padding:6px;
-    border-radius: 20px;
+    margin: 0 auto;
+    padding:4px;
+    border-radius: 8px;
     border-style: none;
     outline: none;
     font-weight: bold;
+    background-color: green;
+    color:white;
 }

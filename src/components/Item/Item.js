@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './Item.css';
 import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom'
-import { CartContext } from '../../context/cartContext';
-import { getfirestore } from '../../firebase'
-
+import { useParams } from 'react-router-dom';
+import { getfirestore } from '../../firebase';
 
 export const Item = () => {
     const [isEmpty, setIsEmpty] = useState(false)
     const [item, setItem] = useState([])
     const [categoryExists, setCatExists] = useState(false)
     let { categoryId } = useParams()
-
 
     useEffect(() => {
         const db = getfirestore()
@@ -36,8 +33,6 @@ export const Item = () => {
                         (setItem(data))
                 }
             })
-        console.log(categoryId)
-
 
     }, [categoryId])
 
