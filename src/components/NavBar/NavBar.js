@@ -21,16 +21,16 @@ export const NavBar = (props) => {
             <Link to='/'> <Logo /> </Link>
             <nav className="navbar">
                 <ul className="links">
-                    <li className="link"><Link to='/category/Sunglasses'>Sunglasses</Link></li>
-                    <li className="link"><Link to='/category/Earrings'>Earrings</Link></li>
-                    <li className="link"><Link to='/category/Sale'>Sale!</Link></li>
+                    <li className="link"><Link to='/category/Sunglasses'><b>Sunglasses</b></Link></li>
+                    <li className="link"><Link to='/category/Earrings'> <b>Earrings</b></Link></li>
+                    <li className="link"><Link to='/category/Sale'> <b>Sale!</b></Link></li>
                 </ul>
             </nav >
             <div className="right">
                 <input type="search" className="search" placeholder="Search"></input>
                 <span className="cart">
                     <Link to="/CartView" className="cart-icon"><CartWidget /></Link>
-                    <p>{quantity} </p>
+                    <p><b>{quantity}</b></p>
                 </span>
                 <span className="user">
                     <a className="user-icon"><MdPerson /></a>

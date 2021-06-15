@@ -1,4 +1,12 @@
-.formFields{
+/* .formFields{
     margin: 4px;
     outline:none;
-}
+} */
+
+.input[type=text] {
+    width: 100%;
+    margin-bottom: 4px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }

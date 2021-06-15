@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import { Input } from '../Input/Input';
 import { NavBar } from '../NavBar/NavBar';
 import { Footer } from '../Footer/Footer';
+import { FaUser } from 'react-icons/fa';
+import { FaEnvelope } from 'react-icons/fa';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { FaTrash } from 'react-icons/fa';
+import { BiCart } from 'react-icons/bi';
 import '../CartView/CartView.css';
 import 'firebase/firestore'
 import { getfirestore } from '../../firebase'
@@ -19,25 +24,29 @@ export const CartView = () => {
             id: "name",
             label: "Name",
             value: form.name,
-            type: "text"
+            type: "text",
+            icon: <FaUser />
         },
         {
             id: "surname",
             label: "Surname",
             value: form.surname,
-            type: "text"
+            type: "text",
+            icon: <FaUser />
         },
         {
             id: "email",
             label: "Email",
             value: form.email,
-            type: "email"
+            type: "text",
+            icon: <FaEnvelope />
         },
         {
             id: "phone",
             label: "Phone",
             value: form.phone,
-            type: "text"
+            type: "text",
+            icon: <FaPhoneAlt />
         }
     ]
 
@@ -89,46 +98,73 @@ export const CartView = () => {
     }
 
     return (
-        <div>
+        <div className="body">
             <NavBar />
-            { cart.length === 0 ?
+            {cart.length === 0 ?
                 (<div className="cartIsEmpty">
                     <h2 className="emptyCart">You haven't added any items yet...</h2>
                     <Link to="/"><button className="backToShop">Back to shopping</button></Link>
                 </div>
                 )
                 :
-                (
-                    <div className="cartContainer">
-                        <div className="cartCont">
-                            <h3 className="order">Your order:</h3>
-                            {cart.map((i) =>
-                                <div className="productContainer" key={i.id}>
-                                    <h5>{i.name} </h5>
-                                    <h5>Subtotal: $<b>{i.price} </b> </h5>
-                                    <h5>Quantity:<b>{i.quantity}</b> </h5>
-                                    <button className="remove" onClick={() => removeFromCart(i.id)}>Remove</button>
-                                </div>
-                            )}
-                            <button className="clear" onClick={() => clearAll(cart.length)}>Clear all</button>
-                            <h4 className="total">Total Price: $ {sumTotal(cart)} </h4>
-                        </div>
-                        <div className="form">
-                            <h3>Your info: </h3>
-                            {formField.map(({ id, label, type, value }) => (
-                                <form className="">
+                (<div className="row">
+                    <div className="col-75">
+                        <div className="container">
+                            <div className='row'>
+                                <div className="row">
+                                    <div className="col-50">
+                                        <h3>Your info: </h3>
+                                        {formField.map(({ id, label, type, value, icon }) => (
+                                            <div>
+                                                <h4 className="label"><span>{icon}</span> {label}</h4>
 
-                                    <h4 className="label">{label} </h4>
-                                    <Input onChange={handleForm} key={id} id={id} label={label} type={type} value={value}
-                                    />
-                                </form>
-                            ))}
-                            <button className="finishPurchase" type="submit" onClick={handleFinish, handleSubmit}>Finish Purchase</button>
+                                                <Input className="input" onChange={handleForm} key={id} id={id} label={label}
+                                                    type={type} value={value} />
+                                            </div>
+                                        ))}
+                                        <button className="btn" type="submit" onClick={handleFinish, handleSubmit}>Finish Purchase</button>
+                                    </div>
+                                </div>
+
+                                <div className="col-30">
+                                    <h3 className="order">Your order <span> <BiCart /></span></h3>
+                                    {cart.map((i) =>
+                                        <div className="" key={i.id}>
+                                            <p className="price">{i.name}<span > $ {i.price} </span>
+                                                <span> ({i.quantity})</span>
+                                                <span> <button className="remove" onClick={() => removeFromCart(i.id)}><span><FaTrash /></span></button></span>
+                                            </p>
+                                        </div>
+                                    )}
+                                    <hr />
+                                    <h4 className="total">Total Price: $ {sumTotal(cart)} </h4>
+                                    <button className="clear" onClick={() => clearAll(cart.length)}>Clear all</button>
+
+                                </div>
+
+                                {/* <div className="row">
+                                    <div className="col-50">
+                                        <h3>Your info: </h3>
+                                        {formField.map(({ id, label, type, value, icon }) => (
+                                            <div>
+                                                <h4 className="label"><span>{icon}</span> {label}</h4>
+
+                                                <Input className="input" onChange={handleForm} key={id} id={id} label={label}
+                                                    type={type} value={value} />
+                                            </div>
+                                        ))}
+                                        <button className="btn" type="submit" onClick={handleFinish, handleSubmit}>Finish Purchase</button>
+                                    </div>
+                                </div> */}
+
+                            </div>
                         </div>
                     </div>
-                )}
+                </div >
+                )
+            }
             <Footer />
-        </div>
+        </div >
     )
 }
 export default CartView
