@@ -1,32 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { CartContext } from '../../context/cartContext';
 import './ItemCount.css';
 import { FaChevronLeft } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa'
 
 
-export const ItemCount = ({ stock, onAdd }) => {
-
-    const [number, setNumber] = useState(1)
-
-    const add = () => {
-        if (number < stock) {
-            setNumber(number + 1)
-        }
-    }
-    const substract = () => {
-        if ((number <= stock) && (number > 1))
-            setNumber(number - 1)
-    }
+export const ItemCount = ({ count, add, substract }) => {
 
     return (
         <div>
             <div className="count">
-                <button className="button" onClick={substract}><FaChevronLeft /> </button>
-                <span className="quantity">{number}</span>
-                <button className="button" onClick={add}><FaChevronRight /> </button>
+                <button className="button" onClick={() => substract(count)}><FaChevronLeft /> </button>
+                <span className="quantity">{count}</span>
+                <button className="button" onClick={() => add(count)}><FaChevronRight /> </button>
             </div>
-            <button className="buttonAddCart" onClick={onAdd}>Add to cart</button>
-        </div>
+        </div >
     )
 }
 export default ItemCount

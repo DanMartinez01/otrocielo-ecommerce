@@ -16,7 +16,9 @@
         align-items: center;
     }
 }
-
+.productContainer{
+    margin-bottom: 4px;
+}
 
 .productPhoto{
     height:350px;
@@ -30,22 +32,27 @@
     margin:0 5px;
 }
 
-.greeting{
-    font-family: 'Lato', sans-serif;
-    color:gray;
-    text-align: center;
-}
-.welcome{
-    font-family: 'Lato', sans-serif;
-}
 .buttonGoCart{
+    font-family: 'Lato', sans-serif;
     display: flex;
     margin: 0 auto;
-    padding:4px;
+    padding:10px;
     border-radius: 8px;
     border-style: none;
     outline: none;
     font-weight: bold;
-    background-color: green;
+    background-color: #ea526f;
     color:white;
+}
+a.buttonGoCart{
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    margin: 0 auto;
+    padding:1px;
+    border-radius: 8px;
+    border-style: none;
+    outline: none;
+    font-weight: bold;
+    background-color: #ea526f;
+    color:white;   
 }

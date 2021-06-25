@@ -3,17 +3,29 @@ import { CartContext } from '../../context/cartContext';
 import { Link } from 'react-router-dom';
 import { Input } from '../Input/Input';
 import { NavBar } from '../NavBar/NavBar';
+import { ItemCount } from '../ItemCount/ItemCount';
 import { Footer } from '../Footer/Footer';
 import { FaUser } from 'react-icons/fa';
 import { FaEnvelope } from 'react-icons/fa';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { FaTrash } from 'react-icons/fa';
 import { BiCart } from 'react-icons/bi';
+import Lottie from 'react-lottie';
+import emptyCart from '../../assets/lottie/emptyCart.json';
 import '../CartView/CartView.css';
 import 'firebase/firestore'
 import { getfirestore } from '../../firebase'
 export const CartView = () => {
-    const { cart, removeFromCart, clearAll, sumTotal, number } = useContext(CartContext)
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYmid slice'
+        }
+    }
+
+    const { cart, removeFromCart, clearAll, sumTotal, number, quantity, cartQty } = useContext(CartContext)
 
     const [form, setForm] = useState({ name: '', surname: '', email: '', phone: '' })
     const [order, setOrder] = useState('')
@@ -88,7 +100,6 @@ export const CartView = () => {
             buyer: { name, surname, phone, email },
             items: items,
             date: new Date()
-
         }
 
         ordersCollection.add(newOrder).then(({ id }) => {
@@ -102,8 +113,9 @@ export const CartView = () => {
             <NavBar />
             {cart.length === 0 ?
                 (<div className="cartIsEmpty">
-                    <h2 className="emptyCart">You haven't added any items yet...</h2>
+                    <h2 className="cartIsEmpty">You haven't added any items yet...</h2>
                     <Link to="/"><button className="backToShop">Back to shopping</button></Link>
+                    <Lottie options={{ animationData: emptyCart, ...defaultOptions }} />
                 </div>
                 )
                 :
@@ -118,11 +130,15 @@ export const CartView = () => {
                                             <div>
                                                 <h4 className="label"><span>{icon}</span> {label}</h4>
 
-                                                <Input className="input" onChange={handleForm} key={id} id={id} label={label}
-                                                    type={type} value={value} />
+                                                <Input className="input" onChange={handleForm}
+                                                    key={id} id={id} label={label}
+                                                    type={type} value={value}
+                                                />
                                             </div>
                                         ))}
-                                        <button className="btn" type="submit" onClick={handleFinish, handleSubmit}>Finish Purchase</button>
+                                        <button className="btn" type="submit"
+                                            onClick={handleFinish, handleSubmit}>Finish Purchase
+                                        </button>
                                     </div>
                                 </div>
 
@@ -130,18 +146,17 @@ export const CartView = () => {
                                     <h3 className="order">Your order <span> <BiCart /></span></h3>
                                     {cart.map((i) =>
                                         <div className="" key={i.id}>
-                                            <p className="price">{i.name}<span > $ {i.price} </span>
-                                                <span> ({i.quantity})</span>
-                                                <span> <button className="remove" onClick={() => removeFromCart(i.id)}><span><FaTrash /></span></button></span>
-                                            </p>
+                                            <button className="remove" onClick={() => removeFromCart(i.id)}>
+                                                <span><FaTrash /></span>
+                                            </button>
+                                            <p className="price">{i.name} <span> ({i.quantity})</span></p>
+                                            <p className="price">$ {i.price}</p>
                                         </div>
                                     )}
                                     <hr />
                                     <h4 className="total">Total Price: $ {sumTotal(cart)} </h4>
                                     <button className="clear" onClick={() => clearAll(cart.length)}>Clear all</button>
-
                                 </div>
-
                             </div>
                         </div>
                     </div>

@@ -1,88 +1,3 @@
-/* .cartContainer{
-    column-count: 2;
-    /* margin-top: 20px; */
-    /* margin: 0 auto;
-} */
-/* @media (max-width:800px){
-    .cartContainer{
-        column-count: 1;
-    }
-}
-
-.productContainer{
-padding:4px;
-margin: 0 20px;
-display:inline-block;
-border: 0.5px solid gray;
-overflow: hidden;
-}
-.form{
-   margin:0 1px;
-   display:inline-block
-}
-.label{
-    margin-bottom: 4px;
-    font-weight: normal;
-}
-
-.cartIsEmpty{
-   margin-top: 50px;
-   text-align: center; 
-   font-weight:lighter;
-}
-.backToShop{
-    display: flex;
-    padding:8px;
-    border-radius: 12px;
-    border-style: none;
-    outline: none;
-    font-weight: bold;
-    background-color:#590d22;
-    color:white;  
-    margin:auto;
-}
-.remove{
-    display: flex;
-    padding:6px;
-    margin: 0 20px;
-    border-radius: 12px;
-    border-style: none;
-    outline: none;
-    font-weight: normal;
-    background-color: red;
-    color:white;
-}
-.clear{
-    display: flex;
-    margin:0 44px;
-    padding:6px;
-    border-radius: 12px;
-    border-style: none;
-    outline: none;
-    font-weight: normal;
-    background-color: red;
-    color:white;  
-}
-.order, .total{
-    margin:12px;
-}
-.finishPurchase{
-    display: flex;
-    margin: 0 auto;
-    /* margin-top:8px; */
-    /* padding:8px;
-    border-radius: 12px;
-    border-style: none;
-    outline: none;
-    font-weight: bold;
-    background-color:green;
-    color: white;
-}
-.label{
-    margin:auto;
-    text-align:center;
-}  */
-
 
 .row {
     display: -ms-flexbox; /* IE10 */
@@ -120,12 +35,9 @@ overflow: hidden;
   
   .container {
     background-color: #f2f2f2;
-    /* background-color: gray; */
     padding: 5px 20px 15px 20px;
     border: 1px solid lightgrey;
-    border-radius: 3px;
-    
-    
+    border-radius: 3px;  
   }
   
   input[type=text] {
@@ -165,10 +77,12 @@ overflow: hidden;
   }
   
   p.price {
-    /* float: left; */
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: black;
     text-align: left;
     justify-items:stretch;
-    margin-bottom: 2px;
+    margin-bottom: 8px;
   }
   .remove{
     font-family: 'Lato', sans-serif;
@@ -183,13 +97,27 @@ overflow: hidden;
     font-family: 'Lato', sans-serif;
     background-color: red;
     color: white;
-    padding: 12px;
+    padding: 8px;
     margin: 10px 0;
     border: none;
-    width: 30%;
+    width: 100%;
     border-radius: 3px;
     cursor: pointer;
     font-size: 12px;
+}
+
+.cartIsEmpty{
+  /* margin-bottom: -50px; */
+  text-align: center; 
+  font-weight:lighter;
+}
+.backToShop{
+font-family: 'Lato', sans-serif;
+background-color: #ea526f;
+color: white;
+border:none;
+padding: 8px;
+border-radius: 8px;
 }
   
   /* Responsive layout - when the screen is less thanstack on top ection - make the "cart" column go on top) */

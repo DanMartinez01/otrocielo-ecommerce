@@ -8,8 +8,10 @@
     margin-bottom: 20px; 
     background-size: 100%;
     animation: banner 10s infinite;
+    font-family: 'Lato', sans-serif;
     text-align: center;
     font-size: larger;
+    font-weight: bold;
 }
 @keyFrames banner{
     0%, 30%{
