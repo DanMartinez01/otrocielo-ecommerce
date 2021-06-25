@@ -142,21 +142,6 @@ export const CartView = () => {
 
                                 </div>
 
-                                {/* <div className="row">
-                                    <div className="col-50">
-                                        <h3>Your info: </h3>
-                                        {formField.map(({ id, label, type, value, icon }) => (
-                                            <div>
-                                                <h4 className="label"><span>{icon}</span> {label}</h4>
-
-                                                <Input className="input" onChange={handleForm} key={id} id={id} label={label}
-                                                    type={type} value={value} />
-                                            </div>
-                                        ))}
-                                        <button className="btn" type="submit" onClick={handleFinish, handleSubmit}>Finish Purchase</button>
-                                    </div>
-                                </div> */}
-
                             </div>
                         </div>
                     </div>
