@@ -21,7 +21,7 @@ export const ItemDetailContainer = () => {
             }).catch(
                 (error) => console.error("Firestore error", error)
             )
-    }, [])
+    }, [id])
 
     return (
         <div>

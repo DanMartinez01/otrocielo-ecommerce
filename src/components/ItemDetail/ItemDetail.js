@@ -1,6 +1,6 @@
 import '../ItemDetail/ItemDetail.css';
 import { ItemCount } from '../ItemCount/ItemCount';
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/cartContext';
 
@@ -35,7 +35,7 @@ export const ItemDetail = ({ props }) => {
                 <div className="product">
                     <div className="card">
                         <div>
-                            <img src={props.photo} className="productPhoto"></img>
+                            <img src={props.photo} alt="product" className="productPhoto"></img>
                             <div className="productContainer" key={props.id} >
                                 <p className="productName">SPRING COLLECTION</p>
                                 <p className="productName">{props.name}</p>

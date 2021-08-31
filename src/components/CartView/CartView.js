@@ -1,9 +1,8 @@
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
 import { CartContext } from '../../context/cartContext';
 import { Link } from 'react-router-dom';
 import { Input } from '../Input/Input';
 import { NavBar } from '../NavBar/NavBar';
-import { ItemCount } from '../ItemCount/ItemCount';
 import { Footer } from '../Footer/Footer';
 import { FaUser } from 'react-icons/fa';
 import { FaEnvelope } from 'react-icons/fa';
@@ -25,7 +24,7 @@ export const CartView = () => {
         }
     }
 
-    const { cart, removeFromCart, clearAll, sumTotal, number, quantity, cartQty } = useContext(CartContext)
+    const { cart, removeFromCart, clearAll, sumTotal } = useContext(CartContext)
 
     const [form, setForm] = useState({ name: '', surname: '', email: '', phone: '' })
     const [order, setOrder] = useState('')
@@ -89,7 +88,7 @@ export const CartView = () => {
         cartOrder()
     }
 
-    const items = cart.map(product => ({ id: product.id, name: product.name }))
+    // const items = cart.map(product => ({ id: product.id, name: product.name }))
 
     const cartOrder = () => {
         const db = getfirestore()
@@ -103,7 +102,8 @@ export const CartView = () => {
         }
 
         ordersCollection.add(newOrder).then(({ id }) => {
-            setOrder(id)
+            setOrder(order)
+            // setOrder(id)
         })
         alert("Purchase finished succesfully")
     }
@@ -137,7 +137,7 @@ export const CartView = () => {
                                             </div>
                                         ))}
                                         <button className="btn" type="submit"
-                                            onClick={handleFinish, handleSubmit}>Finish Purchase
+                                            onClick={(handleFinish, handleSubmit)}>Finish Purchase
                                         </button>
                                     </div>
                                 </div>

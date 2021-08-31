@@ -15,6 +15,13 @@
         flex-direction: row;
         align-items: center;
     }
+    .productPhoto{
+        height:150px;
+        width:150px;
+    }
+    .product{
+        padding:0 1px;
+    }
 }
 .productContainer{
     margin-bottom: 4px;

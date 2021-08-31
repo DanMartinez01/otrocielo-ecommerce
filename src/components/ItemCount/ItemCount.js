@@ -1,5 +1,4 @@
-import React, { useState, useContext } from 'react';
-import { CartContext } from '../../context/cartContext';
+import React from 'react';
 import './ItemCount.css';
 import { FaChevronLeft } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa'

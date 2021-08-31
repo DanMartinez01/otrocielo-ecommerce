@@ -9,12 +9,12 @@ import { useContext } from 'react';
 import { CartContext } from '../../context/cartContext';
 
 export const NavBar = (props) => {
-    const { cartNumber, suma, clearAll, cartQty, quantity, cart } = useContext(CartContext)
+    const { cart } = useContext(CartContext)
 
-    const USER = {
-        name: "Dani",
-        avatar: <MdPerson fontSize="large" color="black"></MdPerson>
-    }
+    // const USER = {
+    //     name: "Dani",
+    //     avatar: <MdPerson fontSize="large" color="black"></MdPerson>
+    // }
 
     return (
         <head className="head">
@@ -33,7 +33,7 @@ export const NavBar = (props) => {
                     <p><b>{cart.length}</b></p>
                 </span>
                 <span className="user">
-                    <a className="user-icon"><MdPerson /></a>
+                    <button className="user-icon" href="#"><MdPerson /></button>
                 </span>
             </div>
         </head >

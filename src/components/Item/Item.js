@@ -7,7 +7,7 @@ import { getfirestore } from '../../firebase';
 export const Item = () => {
     const [isEmpty, setIsEmpty] = useState(false)
     const [item, setItem] = useState([])
-    const [categoryExists, setCatExists] = useState(false)
+    // const [categoryExists, setCatExists] = useState(false)
     let { categoryId } = useParams()
 
     useEffect(() => {
@@ -23,9 +23,10 @@ export const Item = () => {
                     ...doc.data()
                 }))
 
-                setCatExists(true)
+
                 const filteredItems = data.filter(
                     (product) => product.category === categoryId)
+                // eslint-disable-next-line 
                 {
                     (categoryId) ?
                         (setItem(filteredItems))
@@ -44,7 +45,7 @@ export const Item = () => {
                 (item.map((item) =>
                     <div className="product">
                         <div className="card">
-                            <img src={item.photo} className="productPhoto"></img>
+                            <img src={item.photo} className="productPhoto" alt="product"></img>
                             <div className="productContainer" key={item.id}>
                                 <p className="productName">SPRING COLLECTION</p>
                                 <p className="productName"> {item.name} </p>
