@@ -1,6 +1,6 @@
 ## Welcome
 Este proyecto fue creado durante el curso de React Js de Coder House. Es una e-commerce de accesorios varios.
-##Deployed site here:
+## Deployed site here:
 [OtroCielo Ecommerce](https://vigorous-wing-57f482.netlify.app )
 
 ## Available Scripts
