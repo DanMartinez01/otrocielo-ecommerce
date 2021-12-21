@@ -2,7 +2,6 @@ import React from 'react';
 import './NavBar.css';
 import '../ItemListContainer/ItemListContainer';
 import { CartWidget } from '../CartWidget/CartWidget';
-import { MdPerson } from 'react-icons/md';
 import { Logo } from '../Logo/Logo'
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
@@ -10,12 +9,6 @@ import { CartContext } from '../../context/cartContext';
 
 export const NavBar = (props) => {
     const { cart } = useContext(CartContext)
-
-    // const USER = {
-    //     name: "Dani",
-    //     avatar: <MdPerson fontSize="large" color="black"></MdPerson>
-    // }
-
     return (
         <head className="head">
             <Link to='/'> <Logo /> </Link>
@@ -29,11 +22,10 @@ export const NavBar = (props) => {
             <div className="right">
                 <input type="search" className="search" placeholder="Search"></input>
                 <span className="cart">
-                    <Link to="/CartView" className="cart-icon"><CartWidget /></Link>
+                    <Link to="/CartView" className="cart-icon">
+                        <CartWidget />
+                    </Link>
                     <p><b>{cart.length}</b></p>
-                </span>
-                <span className="user">
-                    <button className="user-icon" href="#"><MdPerson /></button>
                 </span>
             </div>
         </head >

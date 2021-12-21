@@ -5,8 +5,9 @@
 .footerLinks{
     text-align: left;
     list-style: none;
-    font-weight: bold;
-    color:rgba(0, 0, 0, 0.733);
+    color:rgba(0, 0, 0, 0.534);
+    font-weight:600;
+    letter-spacing: 1px;
 }
 .footerLinks:hover{
     color:black;

@@ -14,12 +14,6 @@
     align-items: left;
     
 }
-@media (min-width:800px){
-    .head{
-        flex-direction: row;
-        align-items: center;
-    }
-}
 
   .logo{
     color:gray;
@@ -92,5 +86,19 @@
     padding:5px;
     
   }
+
+  @media (min-width:800px){
+    .head{
+        flex-direction: row;
+        align-items: center;
+    }
+}
+/* @media (max-width:400px){
+  .head{
+      flex-direction: row;
+      align-items: center;
+  }
+ 
+} */
 
   
