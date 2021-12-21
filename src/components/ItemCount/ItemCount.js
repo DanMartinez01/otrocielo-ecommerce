@@ -9,9 +9,9 @@ export const ItemCount = ({ count, add, substract }) => {
     return (
         <div>
             <div className="count">
-                <button className="button" onClick={() => substract(count)}><FaChevronLeft /> </button>
+                <button className="button" onClick={() => substract(count)}><FaChevronLeft color="white" /> </button>
                 <span className="quantity">{count}</span>
-                <button className="button" onClick={() => add(count)}><FaChevronRight /> </button>
+                <button className="button" onClick={() => add(count)}><FaChevronRight color="white" /> </button>
             </div>
         </div >
     )

@@ -30,45 +30,42 @@ export const ItemDetail = ({ props }) => {
     }
 
     return (
-        <div>
-            <div className="wrapper">
-                <div className="product">
-                    <div className="card">
-                        <div>
-                            <img src={props.photo} alt="product" className="productPhoto"></img>
-                            <div className="productContainer" key={props.id} >
-                                <p className="productName">SPRING COLLECTION</p>
-                                <p className="productName">{props.name}</p>
-                                <p className="productPrice"><b>$ {props.price} </b></p>
-                                <p className="productPrice"><b>{props.stock} </b></p>
-                            </div>
-                        </div>
-                        <div>
-                            {
-                                props.stock === 0 ? (<p>Sin stock</p>) :
-                                    (<p>disponibles</p>) &&
-                                        showButton ?
-                                        (<div>
-                                            <ItemCount
-                                                count={quantity}
-                                                add={add}
-                                                substract={substract}
-                                                stock={props.stock}
-                                            />
-                                            <button className="buttonGoCart" onClick={() => onAdd(quantity)}>Add to cart</button>
-                                        </div>
-                                        )
-                                        :
-                                        (<div>
-                                            <button className="buttonGoCart">
-                                                <Link className="buttonGoCart" to='/CartView'>Go to cart</Link>
-                                            </button>
-                                        </div>)
-                            }
-                        </div>
+        <div className="productWrapper">
+            <div className="productCard">
+                <div className="productDescription">
+                    <img src={props.photo} alt="product" className="productPhoto"></img>
+                    <div className="productContainer" key={props.id} >
+                        <p className="productName">SPRING COLLECTION</p>
+                        {/* <p className="productPrice"><b>{props.stock} </b></p> */}
                     </div>
                 </div>
-            </div >
+                <div className="purchaseSection">
+                    <p className="productName">{props.name}</p>
+                    <p className="sectionText">Section: {props.category}</p>
+                    <p className="productPrice"><b>$ {props.price} </b></p>
+                    {
+                        props.stock === 0 ? (<p>Sin stock</p>) :
+                            (<p>disponibles</p>) &&
+                                showButton ?
+                                (<div className="counter">
+                                    <ItemCount
+                                        count={quantity}
+                                        add={add}
+                                        substract={substract}
+                                        stock={props.stock}
+                                    />
+                                    <button className="buttonGoCart" onClick={() => onAdd(quantity)}>Add to cart</button>
+                                </div>
+                                )
+                                :
+                                (<div>
+                                    <button className="buttonGoCart">
+                                        <Link className="buttonGoCart" to='/CartView'>Go to cart</Link>
+                                    </button>
+                                </div>)
+                    }
+                </div>
+            </div>
         </div >
     )
 }
