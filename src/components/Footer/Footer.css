@@ -1,7 +1,20 @@
 .footer{
-    background-color: rgb(241, 226, 226);
-    height:100px;
-    text-align: center;
-    padding:5px;
-    margin-top:438px;
+    background-color: rgba(241, 226, 226, 0.829);
+    padding:30px;
+}
+.footerLinks{
+    text-align: left;
+    list-style: none;
+    font-weight: bold;
+    color:rgba(0, 0, 0, 0.733);
+}
+.footerLinks:hover{
+    color:black;
+}
+.footerBrand{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color:black;
+    font-weight: bold;
 }
