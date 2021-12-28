@@ -54,7 +54,10 @@ export const ItemDetail = ({ props }) => {
                                         substract={substract}
                                         stock={props.stock}
                                     />
-                                    <button className="buttonGoCart" onClick={() => onAdd(quantity)}>Add to cart</button>
+                                    <div className="count">
+                                        <button className="buttonGoCart" onClick={() => onAdd(quantity)}>Add to cart</button>
+                                    </div>
+
                                 </div>
                                 )
                                 :
