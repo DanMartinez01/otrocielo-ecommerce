@@ -2,18 +2,15 @@
     display: flex;
     align-items: center;
     justify-content:center;
-    /* margin: 2px; */
-    padding:0px;
     background-color: black;
     color:white;
 }
 .button{
     background-color: black;
     border-style: none;
-    padding:10px;
-    margin:4px;
+    padding:4px;
 }
-.buttonAddCart{
+/* .buttonAddCart{
     display: flex;
     margin: 0 auto;
     padding:8px;
@@ -23,14 +20,14 @@
     font-weight: bold;
     background-color: green;
     color:white;
-}
+} */
 .quantity{
-    padding:0 2px;
-    margin:0 2px;
+    padding:0 1px;
+    margin:0 1px;
 }
 p{
     display: block;
     text-align: center;
-    padding:0 2px;
-    margin:0 2px; 
+    padding:0 1px;
+    margin:0 1px; 
 }
