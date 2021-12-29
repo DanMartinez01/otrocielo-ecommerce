@@ -34,10 +34,6 @@ export const ItemDetail = ({ props }) => {
             <div className="productCard">
                 <div className="productDescription">
                     <img src={props.photo} alt="product" className="productPhoto"></img>
-                    <div className="productContainer" key={props.id} >
-                        <p className="productName">SPRING COLLECTION</p>
-                        {/* <p className="productPrice"><b>{props.stock} </b></p> */}
-                    </div>
                 </div>
                 <div className="purchaseSection">
                     <p className="productName">{props.name}</p>
@@ -58,11 +54,11 @@ export const ItemDetail = ({ props }) => {
                                 </div>
                                 )
                                 :
-                                (<div>
-                                    <button >
+                                (
+                                    <button className="goToCart">
                                         <Link to='/CartView'>Go to cart</Link>
                                     </button>
-                                </div>)}
+                                )}
                 </div>
             </div>
         </div >
