@@ -4,11 +4,12 @@
     justify-content:center;
     background-color: black;
     color:white;
+    margin-bottom: 4px;
 }
 .button{
     background-color: black;
     border-style: none;
-    padding:4px;
+    padding:10px;
 }
 /* .buttonAddCart{
     display: flex;
