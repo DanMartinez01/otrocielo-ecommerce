@@ -1,5 +1,7 @@
 
 .product{
+    
+    font-family: 'Lato', sans-serif;
     display: flex;
     width: calc (100% - 20px);
     align-items: center;
@@ -18,21 +20,21 @@
     width:300px;
     border-radius: 10px;
 }
-.productName, .productPrice{
-    font-family: 'Lato', sans-serif;
+.itemName, .itemPrice{
     text-align: left;
     margin:0 5px;
 }
- .buttonBuy{
+ .buttonBuy{  
     display: flex;
-    margin:auto;
-    padding:4px;
-    border-radius: 8px;
-    border-style: none;
-    outline: none;
-    font-family: 'Lato', sans-serif;
-    font-weight:400;
+    align-items: center;
+    justify-content:center;
+    margin:0 auto;
+    padding:6px;
+    background-color: rgb(235, 198, 32);
     color:white;
-    background-color: #ea526f;
+    text-transform: uppercase;
+    font-size: 16px;
+    outline: none;
+    border-style: none;
 }
 

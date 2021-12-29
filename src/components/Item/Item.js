@@ -47,9 +47,9 @@ export const Item = () => {
                         <div className="card">
                             <img src={item.photo} className="productPhoto" alt="product"></img>
                             <div className="productContainer" key={item.id}>
-                                <p className="productName">SPRING COLLECTION</p>
-                                <p className="productName"> {item.name} </p>
-                                <p className="productPrice"><b>$ {item.price} </b></p>
+                                <p className="itemName">SPRING COLLECTION</p>
+                                <p className="itemName"> {item.name} </p>
+                                <p className="itemPrice"><b>$ {item.price} </b></p>
                                 <button className="buttonBuy"><Link className="buttonBuy" to={`/ItemDetailContainer/${item.id}`}>I want it</Link></button>
                             </div>
                         </div>
