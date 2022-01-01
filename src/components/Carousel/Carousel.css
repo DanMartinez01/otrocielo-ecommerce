@@ -1,4 +1,4 @@
-.banner{
+/* .banner{
     width: calc (100% - 20px);
     height: 50%;
     border: 3px gray;
@@ -24,7 +24,7 @@
         background-color:rgb(241, 226, 226);
    }
    
-}
+} */
 .bannerContainer{
     text-align: center;
     padding:0px;

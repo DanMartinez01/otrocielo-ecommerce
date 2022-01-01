@@ -11,7 +11,7 @@ export const Carousel = () => {
                 width="100%"
                 alt="banner"
             />
-            <div className="banner">Welcome!</div>
+            {/* <div className="banner">Welcome!</div> */}
         </div>
 
     )
