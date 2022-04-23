@@ -4,6 +4,8 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { CartView } from './components/CartView/CartView';
 import { CartProvider } from '../src/context/cartContext';
+import { NavBar } from './components/NavBar/NavBar';
+import { Footer } from './components/Footer/Footer'
 
 
 function App() {
@@ -11,6 +13,7 @@ function App() {
 
     <BrowserRouter>
       <CartProvider>
+        <NavBar />
         <Switch>
           <Route path="/CartView" component={CartView}>
             <CartView />
@@ -25,10 +28,9 @@ function App() {
             <ItemListContainer />
           </Route>
         </Switch>
+        <Footer />
       </CartProvider>
     </BrowserRouter>
-
-
   );
 }
 

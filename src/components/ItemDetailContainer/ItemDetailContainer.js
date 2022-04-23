@@ -1,5 +1,4 @@
 import './ItemDetailContainer.css';
-import NavBar from '../NavBar/NavBar';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -25,7 +24,6 @@ export const ItemDetailContainer = () => {
 
     return (
         <div>
-            <NavBar />
             <ItemDetail
                 props={item}
             />

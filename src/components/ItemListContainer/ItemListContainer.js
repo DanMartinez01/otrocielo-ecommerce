@@ -1,17 +1,14 @@
 import React from 'react';
 import './ItemListContainer.css';
-import { NavBar } from '../NavBar/NavBar'
 import { Item } from '../Item/Item';
-import { Footer } from '../Footer/Footer';
-import { Carousel } from '../Carousel/Carousel';
+import CarouselComponent from '../Carousel/CarouselComponent';
 
 
 const ItemListContainer = (props) => {
 
     return (
         <div>
-            <NavBar />
-            <Carousel />
+            <CarouselComponent />
             <Item
                 key={props.id}
                 id={props.id}
@@ -20,7 +17,7 @@ const ItemListContainer = (props) => {
                 name={props.name}
                 price={props.price}
             />
-            <Footer />
+
         </div>
     )
 }

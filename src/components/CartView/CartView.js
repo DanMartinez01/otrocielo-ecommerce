@@ -2,25 +2,22 @@ import { useState, useContext } from 'react'
 import { CartContext } from '../../context/cartContext';
 import { Link } from 'react-router-dom';
 import { Input } from '../Input/Input';
-import { NavBar } from '../NavBar/NavBar';
-import { Footer } from '../Footer/Footer';
 import { FaUser } from 'react-icons/fa';
-import { FaEnvelope } from 'react-icons/fa';
-import { FaPhoneAlt } from 'react-icons/fa';
-import { FaTrash } from 'react-icons/fa';
+import { FaEnvelope, FaPhoneAlt, FaTrash } from 'react-icons/fa';
 import { BiCart } from 'react-icons/bi';
 import Lottie from 'react-lottie';
 import emptyCart from '../../assets/lottie/emptyCart.json';
 import '../CartView/CartView.css';
-import 'firebase/firestore'
-import { getfirestore } from '../../firebase'
+import 'firebase/firestore';
+import { getfirestore } from '../../firebase';
+
 export const CartView = () => {
 
     const defaultOptions = {
         loop: true,
         autoplay: true,
         rendererSettings: {
-            preserveAspectRatio: 'xMidYmid slice'
+            preserveAspectRatio: 'xMidYmid slice',
         }
     }
 
@@ -110,12 +107,11 @@ export const CartView = () => {
 
     return (
         <div className="body">
-            <NavBar />
             {cart.length === 0 ?
                 (<div className="cartIsEmpty">
-                    <h2 className="cartIsEmpty">You haven't added any items yet...</h2>
+                    <h2 className="cartIsEmpty">Your cart is empty!</h2>
                     <Link to="/"><button className="backToShop">Back to shopping</button></Link>
-                    <Lottie options={{ animationData: emptyCart, ...defaultOptions }} />
+                    <Lottie options={{ animationData: emptyCart, ...defaultOptions }} width="300px" height="300px" />
                 </div>
                 )
                 :
@@ -163,7 +159,6 @@ export const CartView = () => {
                 </div >
                 )
             }
-            <Footer />
         </div >
     )
 }
