@@ -11,7 +11,7 @@ export const ItemDetail = ({ props }) => {
     const [quantity, setQuantity] = useState(1)
     const stock = props.stock
     useEffect(() => {
-        window.scrollTo(0, document.body.scrollHeight)
+        window.scrollTo(0, 0)
     }, [])
     const onAdd = (quantity) => {
         addToCart(props, quantity)

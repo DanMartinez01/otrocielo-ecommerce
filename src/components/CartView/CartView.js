@@ -12,7 +12,7 @@ import 'firebase/firestore';
 import { getfirestore } from '../../firebase';
 
 export const CartView = () => {
-
+    //Lottie Animation
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -115,48 +115,42 @@ export const CartView = () => {
                 </div>
                 )
                 :
-                (<div className="row">
-                    <div className="col-75">
-                        <div className="container">
-                            <div className='row'>
-                                <div className="row">
-                                    <div className="col-50">
-                                        <h3>Your info: </h3>
-                                        {formField.map(({ id, label, type, value, icon }) => (
-                                            <div>
-                                                <h4 className="label"><span>{icon}</span> {label}</h4>
+                (
 
-                                                <Input className="input" onChange={handleForm}
-                                                    key={id} id={id} label={label}
-                                                    type={type} value={value}
-                                                />
-                                            </div>
-                                        ))}
-                                        <button className="btn" type="submit"
-                                            onClick={(handleFinish, handleSubmit)}>Finish Purchase
-                                        </button>
-                                    </div>
-                                </div>
+                    <div className="container">
+                        <div className="form">
+                            <h3>Your info: </h3>
+                            {formField.map(({ id, label, type, value, icon }) => (
+                                <div>
+                                    <h4 className="label"><span>{icon}</span> {label}</h4>
 
-                                <div className="col-30">
-                                    <h3 className="order">Your order <span> <BiCart /></span></h3>
-                                    {cart.map((i) =>
-                                        <div className="" key={i.id}>
-                                            <button className="remove" onClick={() => removeFromCart(i.id)}>
-                                                <span><FaTrash /></span>
-                                            </button>
-                                            <p className="price">{i.name} <span> ({i.quantity})</span></p>
-                                            <p className="price">$ {i.price}</p>
-                                        </div>
-                                    )}
-                                    <hr />
-                                    <h4 className="total">Total Price: $ {sumTotal(cart)} </h4>
-                                    <button className="clear" onClick={() => clearAll(cart.length)}>Clear all</button>
+                                    <Input className="input" onChange={handleForm}
+                                        key={id} id={id} label={label}
+                                        type={type} value={value}
+                                    />
                                 </div>
-                            </div>
+                            ))}
+                            <button className="btn" type="submit"
+                                onClick={(handleFinish, handleSubmit)}>Finish Purchase
+                            </button>
+                        </div>
+
+                        <div className="order-details">
+                            <h3 className="order">Your order:</h3>
+                            {cart.map((i) =>
+                                <div key={i.id}>
+                                    <button className="remove" onClick={() => removeFromCart(i.id)}>
+                                        <span><FaTrash /></span>
+                                    </button>
+                                    <p className="price">{i.name} <span> ({i.quantity})</span></p>
+                                    <p className="price">$ {i.price}</p>
+                                </div>
+                            )}
+                            <hr />
+                            <h4 className="total">Total Price: $ {sumTotal(cart)} </h4>
+                            <button className="clear" onClick={() => clearAll(cart.length)}>Clear all</button>
                         </div>
                     </div>
-                </div >
                 )
             }
         </div >

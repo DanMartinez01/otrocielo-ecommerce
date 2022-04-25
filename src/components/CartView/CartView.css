@@ -1,54 +1,25 @@
-.row {
-  display: -ms-flexbox;
-  /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap;
-  /* IE10 */
-  flex-wrap: wrap;
-  margin: 0 10px;
-  width: calc (100% - 10px);
-}
-
-.col-25 {
-  -ms-flex: 25%;
-  /* IE10 */
-  flex: 25%;
-
-}
-
-.col-50 {
-  -ms-flex: 50%;
-  /* IE10 */
-  flex: 50%;
-}
-
-.col-75 {
-  -ms-flex: 75%;
-  /* IE10 */
-  flex: 75%;
-}
-
-.col-25,
-.col-50,
-.col-75 {
-  padding: 0 40px;
-}
-
-.col-30 {
-  padding: 0 10px;
-  margin: 0 50px;
-}
-
 .container {
   display: flex;
   flex-direction: row;
-  background-color: #f2f2f2;
   padding: 5px 20px 15px 20px;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
-input[type=text] {
+.form {
+  padding: 10px;
+  margin: 10px;
+}
+
+.order-details {
+  padding: 10px;
+  margin: 10px;
+}
+
+
+
+
+.input {
   width: 100%;
   margin-bottom: 8px;
   padding: 30px;
@@ -56,15 +27,16 @@ input[type=text] {
   border-radius: 3px;
 }
 
-label {
+.label {
   margin-bottom: 4px;
   display: block;
+  font-size: 16px;
 }
 
 .icon-container {
   margin-bottom: 20px;
   padding: 7px 0;
-  font-size: 24px;
+  font-size: 16px;
 }
 
 .btn {
@@ -133,11 +105,7 @@ p.price {
 /* Responsive layout - when the screen is less thanstack on top ection - make the "cart" column go on top) */
 
 @media (max-width: 800px) {
-  .row {
+  .container {
     flex-direction: column-reverse;
-  }
-
-  .col-25 {
-    margin-bottom: 20px;
   }
 }
