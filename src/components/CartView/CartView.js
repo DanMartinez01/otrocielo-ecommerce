@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { Input } from '../Input/Input';
 import { FaUser } from 'react-icons/fa';
 import { FaEnvelope, FaPhoneAlt, FaTrash } from 'react-icons/fa';
-import { BiCart } from 'react-icons/bi';
 import Lottie from 'react-lottie';
 import emptyCart from '../../assets/lottie/emptyCart.json';
 import '../CartView/CartView.css';
