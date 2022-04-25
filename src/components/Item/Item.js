@@ -34,8 +34,10 @@ export const Item = () => {
                         (setItem(data))
                 }
             })
+        window.scrollTo(0, document.body.scrollHeight)
 
     }, [categoryId])
+
 
     return (
         <div className="wrapper">

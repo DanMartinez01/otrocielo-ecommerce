@@ -1,15 +1,18 @@
 import '../ItemDetail/ItemDetail.css';
 import { ItemCount } from '../ItemCount/ItemCount';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/cartContext';
 
 export const ItemDetail = ({ props }) => {
+
     const { addToCart } = useContext(CartContext)
     const [showButton, setShowButton] = useState(true)
     const [quantity, setQuantity] = useState(1)
     const stock = props.stock
-
+    useEffect(() => {
+        window.scrollTo(0, document.body.scrollHeight)
+    }, [])
     const onAdd = (quantity) => {
         addToCart(props, quantity)
         setQuantity(quantity)
