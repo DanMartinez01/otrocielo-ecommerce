@@ -7,7 +7,6 @@ import { getfirestore } from '../../firebase';
 export const Item = () => {
     const [isEmpty, setIsEmpty] = useState(false)
     const [item, setItem] = useState([])
-    // const [categoryExists, setCatExists] = useState(false)
     let { categoryId } = useParams()
 
     useEffect(() => {

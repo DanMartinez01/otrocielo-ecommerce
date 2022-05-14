@@ -20,7 +20,6 @@ export const NavBar = (props) => {
                 </ul>
             </nav >
             <div className="right">
-                {/* <input type="search" className="search" placeholder="Search"></input> */}
                 <span className="cart">
                     <Link to="/CartView" className="cart-icon">
                         <CartWidget />

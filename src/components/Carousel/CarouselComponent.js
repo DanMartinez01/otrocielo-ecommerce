@@ -6,7 +6,7 @@ import banner2 from '../../assets/banner2.jpg';
 
 export const CarouselComponent = () => {
     return (
-        <Carousel>
+        <Carousel align="center">
             <Carousel.Item align="center" >
                 <img
                     width="100%"
