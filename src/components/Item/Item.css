@@ -1,18 +1,25 @@
+.wrapper {
+    padding: 20px;
+}
+
 .product {
     font-family: 'Lato', sans-serif;
     display: flex;
     width: calc (100% - 20px);
     align-items: center;
-    padding: 20px;
-
+    padding: 10px;
+    margin-bottom: 20px;
     outline: none;
     border-style: none;
+    border-radius: 20px;
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(237, 237, 237, 1);
+    -moz-box-shadow: 4px 4px 5px 0px rgba(237, 237, 237, 1);
+    box-shadow: 4px 4px 5px 0px rgba(237, 237, 237, 1);
 
 }
 
 .card {
-    margin-bottom: 40px;
-
+    margin-bottom: 10px;
     outline: none;
     border-style: none;
 }
@@ -22,9 +29,9 @@
 }
 
 .productPhoto {
-    height: 400px;
-    width: 300px;
-    border-radius: 10px;
+    height: 250px;
+    width: 150px;
+    border-radius: 20px;
 }
 
 .itemName,
