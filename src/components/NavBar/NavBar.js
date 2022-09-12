@@ -12,13 +12,13 @@ export const NavBar = (props) => {
     return (
         <head className="head">
             <Link to='/'> <Logo /> </Link>
-            <nav className="navbar">
-                <ul className="links">
-                    <li className="link"><Link to='/category/Sunglasses'><b>Sunglasses</b></Link></li>
-                    <li className="link"><Link to='/category/Earrings'> <b>Earrings</b></Link></li>
-                    <li className="link"><Link to='/category/Sale'> <b>Sale!</b></Link></li>
-                </ul>
-            </nav >
+
+            <ul className="links">
+                <li className="link"><Link to='/category/Sunglasses'>Sunglasses</Link></li>
+                <li className="link"><Link to='/category/Earrings'>Earrings</Link></li>
+                <li className="link"><Link to='/category/Sale'>Sale!</Link></li>
+            </ul>
+
             <div className="right">
                 <span className="cart">
                     <Link to="/CartView" className="cart-icon">

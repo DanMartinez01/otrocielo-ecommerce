@@ -5,7 +5,8 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { CartView } from './components/CartView/CartView';
 import { CartProvider } from '../src/context/cartContext';
 import { NavBar } from './components/NavBar/NavBar';
-import { Footer } from './components/Footer/Footer'
+import { Footer } from './components/Footer/Footer';
+import Stripe from './components/Stripe/Stripe';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 
     <BrowserRouter>
       <CartProvider>
+        <Stripe />
         <NavBar />
         <Switch>
           <Route path="/CartView" component={CartView}>

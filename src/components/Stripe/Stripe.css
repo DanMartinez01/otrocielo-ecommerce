@@ -1,0 +1,9 @@
+.stripe {
+    padding: 10px;
+    background-color: rgba(255, 192, 203, 0.651);
+}
+
+.stripe p {
+    text-transform: uppercase;
+    font-size: small;
+}

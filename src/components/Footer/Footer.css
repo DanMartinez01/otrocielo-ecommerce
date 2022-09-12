@@ -2,21 +2,22 @@
     /* width: calc(100%-30px); */
     width: 100%;
     background-color: rgba(255, 192, 203, 0.144);
-    padding: 30px;
+    padding: 10px;
 }
 
 .footerWrapper {
     display: flex;
     flex-direction: row;
+    padding: 0px;
 }
 
 .footerLinks {
     text-align: left;
-    margin: 6px;
-    padding: 2px;
+    margin-right: 10px;
+    padding: 1px;
     list-style: none;
     color: rgba(0, 0, 0, 0.534);
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 1px;
 }
 
@@ -29,7 +30,7 @@
     justify-content: center;
     align-content: center;
     color: black;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 @media (max-width:400px) {
