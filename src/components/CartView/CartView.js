@@ -2,8 +2,7 @@ import { useState, useContext } from 'react'
 import { CartContext } from '../../context/cartContext';
 import { Link } from 'react-router-dom';
 import { Input } from '../Input/Input';
-import { FaUser } from 'react-icons/fa';
-import { FaEnvelope, FaPhoneAlt, FaTrash } from 'react-icons/fa';
+import { FaEnvelope, FaPhoneAlt, FaTrash, FaUser } from 'react-icons/fa';
 import Lottie from 'react-lottie';
 import emptyCart from '../../assets/lottie/emptyCart.json';
 import '../CartView/CartView.css';
@@ -137,12 +136,12 @@ export const CartView = () => {
                         <div className="order-details">
                             <h3 className="order">Your order:</h3>
                             {cart.map((i) =>
-                                <div key={i.id}>
-                                    <button className="remove" onClick={() => removeFromCart(i.id)}>
-                                        <span><FaTrash /></span>
-                                    </button>
+                                <div key={i.id} className="productDetail">
                                     <p className="price">{i.name} <span> ({i.quantity})</span></p>
-                                    <p className="price">$ {i.price}</p>
+                                    <p className="price"><b>$ {i.price}</b></p>
+                                    <button className="remove" onClick={() => removeFromCart(i.id)}>
+                                        <span><FaTrash className='FaTrash' /></span>
+                                    </button>
                                 </div>
                             )}
                             <hr />

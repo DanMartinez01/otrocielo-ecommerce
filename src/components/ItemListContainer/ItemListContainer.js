@@ -7,8 +7,11 @@ import CarouselComponent from '../Carousel/CarouselComponent';
 const ItemListContainer = (props) => {
 
     return (
-        <div>
+        <div >
             <CarouselComponent />
+            <div className='collectionTitle'>
+                <h1 className='newCollection'><span>Our collection</span></h1>
+            </div>
             <Item
                 key={props.id}
                 id={props.id}
@@ -17,7 +20,6 @@ const ItemListContainer = (props) => {
                 name={props.name}
                 price={props.price}
             />
-
         </div>
     )
 }

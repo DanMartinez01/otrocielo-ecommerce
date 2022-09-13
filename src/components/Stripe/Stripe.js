@@ -5,7 +5,7 @@ const Stripe = () => {
 
     return (
         <div className="stripe">
-            <p> Free Shipping this month!</p>
+            <p>Free express shipping on orders over USD 150.00</p>
         </div>
     )
 }
