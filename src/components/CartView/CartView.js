@@ -137,7 +137,7 @@ export const CartView = () => {
                             <h3 className="order">Your order:</h3>
                             {cart.map((i) =>
                                 <div key={i.id} className="productDetail">
-                                    <p className="price">{i.name} <span> ({i.quantity})</span></p>
+                                    <p className="name">{i.name} <span> ({i.quantity})</span></p>
                                     <p className="price"><b>$ {i.price}</b></p>
                                     <button className="remove" onClick={() => removeFromCart(i.id)}>
                                         <span><FaTrash className='FaTrash' /></span>

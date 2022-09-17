@@ -1,6 +1,7 @@
 .stripe {
+    width: 100%;
     padding: 10px;
-    background-color: rgba(255, 192, 203, 0.651);
+    background-color: rgba(238, 187, 195, 0.425);
 }
 
 .stripe p {
