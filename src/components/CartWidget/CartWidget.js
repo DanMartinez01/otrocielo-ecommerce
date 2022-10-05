@@ -5,7 +5,7 @@ export const CartWidget = () => {
     return (
         <div>
             <button className="cart-icon" >
-                <BiCart fontSize="large" color="black" />
+                <BiCart fontSize="x-large" color="black" />
             </button>
         </div>
     )

@@ -3,6 +3,7 @@ import './Carousel.css';
 import { Carousel } from 'react-bootstrap'
 import banner from '../../assets/banner.jpg';
 import banner2 from '../../assets/banner2.jpg';
+import { Logo } from '../Logo/Logo';
 
 export const CarouselComponent = () => {
     return (
@@ -16,7 +17,7 @@ export const CarouselComponent = () => {
                     fluid
                 />
                 <Carousel.Caption>
-                    <h3>Spring-Summer Collection</h3>
+                    <Logo />
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item align="center">
@@ -28,7 +29,7 @@ export const CarouselComponent = () => {
                     fluid
                 />
                 <Carousel.Caption>
-                    <h3>Spring-Summer Collection</h3>
+                    <Logo />
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
