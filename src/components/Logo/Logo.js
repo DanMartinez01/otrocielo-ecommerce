@@ -1,9 +1,11 @@
 import React from 'react';
+import { WiMoonWaxingCrescent2 } from 'react-icons/wi';
+import { GiLaurelCrown } from 'react-icons/gi';
 
 export const Logo = () => {
 
     return (
-        <h3>OtroCieloStore</h3>
+        <h4>OtroCieloStore <GiLaurelCrown /></h4>
     )
 }
 export default Logo

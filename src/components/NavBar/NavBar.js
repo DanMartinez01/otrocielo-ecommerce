@@ -11,8 +11,7 @@ export const NavBar = (props) => {
     const { cart } = useContext(CartContext)
     return (
         <head className="head">
-            <Link to='/'> <Logo /> </Link>
-
+            <Link to='/'><Logo /></Link>
             <ul className="links">
                 <li className="link"><Link to='/category/Sunglasses'>Sunglasses</Link></li>
                 <li className="link"><Link to='/category/Earrings'>Earrings</Link></li>
