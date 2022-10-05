@@ -128,7 +128,7 @@ export const CartView = () => {
                                     />
                                 </div>
                             ))}
-                            <button className="btn" type="submit"
+                            <button className="btn-finish" type="submit"
                                 onClick={(handleFinish, handleSubmit)}>Finish Purchase
                             </button>
                         </div>
