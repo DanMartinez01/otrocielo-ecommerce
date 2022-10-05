@@ -109,10 +109,14 @@
   font-size: 14px;
 }
 
-/* Responsive layout - when the screen is less thanstack on top ection - make the "cart" column go on top) */
-
 @media (max-width: 800px) {
   .container {
     flex-direction: column-reverse;
+  }
+
+  .productDetail {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
   }
 }
