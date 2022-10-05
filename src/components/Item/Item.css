@@ -1,13 +1,12 @@
 .wrapper {
-    padding: 20px;
+    display: flex;
+    align-content: center;
 }
 
 .product {
-    font-family: 'Lato', sans-serif;
-    display: flex;
-    width: calc (100% - 20px);
-    align-items: center;
+    width: calc (80%);
     padding: 10px;
+    align-items: center;
     margin-bottom: 20px;
     outline: none;
     border-style: none;
@@ -15,7 +14,6 @@
     -webkit-box-shadow: 4px 4px 5px 0px rgba(237, 237, 237, 1);
     -moz-box-shadow: 4px 4px 5px 0px rgba(237, 237, 237, 1);
     box-shadow: 4px 4px 5px 0px rgba(237, 237, 237, 1);
-
 }
 
 .card {
